@@ -1,0 +1,146 @@
+﻿@page "{id:int}"
+@model StudentManagement.Web.Pages.Teacherss.EditModel
+@{
+    ViewData["Title"] = "Edit Teacher";
+}
+
+<div class="container mt-4" style="max-width: 800px;">
+    <div class="card border-0 shadow-sm rounded-3 p-4">
+        <h3 class="fw-bold mb-4">Edit Teacher</h3>
+
+        <form method="post">
+            <input type="hidden" asp-for="Teacher.Id" />
+
+            <div class="mb-3">
+                <label asp-for="Teacher.FullName" class="form-label fw-semibold">Full Name</label>
+                <input asp-for="Teacher.FullName" class="form-control" required />
+            </div>
+
+            <div class="mb-4">
+                <label asp-for="Teacher.Email" class="form-label fw-semibold">Email</label>
+                <input asp-for="Teacher.Email" class="form-control" type="email" required />
+            </div>
+
+            <hr class="my-4" />
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="fw-semibold mb-0">Assigned Classes & Subjects</h5>
+                <button type="button" class="btn btn-sm btn-outline-primary rounded-2" onclick="addRow()">
+                    + Add Row
+                </button>
+            </div>
+
+            <div id="class-container" class="d-flex flex-column gap-2">
+                <div class="row g-2 align-items-center class-row">
+                    <!-- Subject Dropdown -->
+                    <div class="col-4">
+                        <select asp-for="Teacher.Subject" class="form-select">
+                            <option value="">Select Subject</option>
+                            <option value="Mathematics">Mathematics</option>
+                            <option value="Science">Science</option>
+                            <option value="English">English</option>
+                            <option value="History">History</option>
+                            <option value="Physics">Physics</option>
+                            <option value="Chemistry">Chemistry</option>
+                            <option value="Biology">Biology</option>
+                        </select>
+                    </div>
+
+                    <!-- Grade Level Dropdown -->
+                    <div class="col-3">
+                        <select asp-for="Teacher.GradeLevel" class="form-select">
+                            <option value="Kindergarten">Kindergarten</option>
+                            <option value="">Select Grade</option>
+                            <option value="Grade 1">Grade 1</option>
+                            <option value="Grade 2">Grade 2</option>
+                            <option value="Grade 3">Grade 3</option>
+                            <option value="Grade 4">Grade 4</option>
+                            <option value="Grade 5">Grade 5</option>
+                            <option value="Grade 7">Grade 6</option>
+                            <option value="Grade 8">Grade 7</option>
+                            <option value="Grade 9">Grade 8</option>
+                            <option value="Grade 10">Grade 9</option>
+                            <option value="Grade 11">Grade 10</option>
+                            <option value="Grade 12">Grade 11</option>
+
+                        </select>
+                    </div>
+
+                    <!-- Section Dropdown -->
+                    <div class="col-3">
+                        <select asp-for="Teacher.Section" class="form-select">
+                            <option value="">Select Section</option>
+                            <option value="A">Section A</option>
+                            <option value="B">Section B</option>
+                            <option value="C">Section C</option>
+                            <option value="D">Section D</option>
+                        </select>
+                    </div>
+
+                    <!-- Delete Button -->
+                    <div class="col-2">
+                        <button type="button" class="btn btn-danger w-100" onclick="removeRow(this)">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex gap-2 mt-4">
+                <button type="submit" class="btn btn-primary px-4 rounded-2">Save Changes</button>
+                <a asp-page="./Index" class="btn btn-outline-secondary px-3 rounded-2">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function addRow() {
+            const container = document.getElementById('class-container');
+            const newRow = document.createElement('div');
+            newRow.className = 'row g-2 align-items-center class-row';
+            newRow.innerHTML = `
+                <div class="col-4">
+                    <select name="Teacher.Subject" class="form-select">
+                        <option value="">Select Subject</option>
+                        <option value="Mathematics">Mathematics</option>
+                        <option value="Science">Science</option>
+                        <option value="English">English</option>
+                        <option value="History">History</option>
+                        <option value="Physics">Physics</option>
+                        <option value="Chemistry">Chemistry</option>
+                        <option value="Biology">Biology</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <select name="Teacher.GradeLevel" class="form-select">
+                        <option value="">Select Grade</option>
+                        <option value="Grade 9">Grade 9</option>
+                        <option value="Grade 10">Grade 10</option>
+                        <option value="Grade 11">Grade 11</option>
+                        <option value="Grade 12">Grade 12</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <select name="Teacher.Section" class="form-select">
+                        <option value="">Select Section</option>
+                        <option value="A">Section A</option>
+                        <option value="B">Section B</option>
+                        <option value="C">Section C</option>
+                        <option value="D">Section D</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <button type="button" class="btn btn-danger w-100" onclick="removeRow(this)">Delete</button>
+                </div>
+            `;
+            container.appendChild(newRow);
+        }
+
+        function removeRow(btn) {
+            const container = document.getElementById('class-container');
+            if (container.getElementsByClassName('class-row').length > 1) {
+                btn.closest('.class-row').remove();
+            }
+        }
+    </script>
+}

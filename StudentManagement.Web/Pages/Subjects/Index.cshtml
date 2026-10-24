@@ -1,0 +1,30 @@
+﻿@page
+@model StudentManagement.Web.Pages.Subjects.IndexModel
+@{
+    ViewData["Title"] = "Subjects";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Subjects</h2>
+    </div>
+
+    <div class="list-group shadow-sm">
+        @if (Model.Subjects != null && Model.Subjects.Any())
+        {
+            @foreach (var subject in Model.Subjects)
+            {
+                <a asp-page="./Details" 
+                   asp-route-id="@subject.Id" 
+                   class="list-group-item list-group-item-action d-flex justify-content-between align-items-center p-3">
+                    <span class="fw-bold fs-5 text-dark">@subject.Name</span>
+                    <span class="btn btn-sm btn-outline-primary">View Grades & Sections &rarr;</span>
+                </a>
+            }
+        }
+        else
+        {
+            <div class="alert alert-info mb-0">No subjects found.</div>
+        }
+    </div>
+</div>

@@ -1,0 +1,6 @@
+﻿namespace StudentManagement.Web.models
+{
+    public class StudentManagement
+    {
+    }
+}

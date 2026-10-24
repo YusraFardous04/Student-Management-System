@@ -1,0 +1,28 @@
+﻿@page "{enrollmentId:int}"
+@model StudentManagement.Web.Pages.Subjects.AttendanceModel
+<div class="container mt-4">
+    <h1>Attendance</h1>
+
+    <form method="post" asp-page-handler="Mark" asp-route-enrollmentId="@Model.RouteData.Values["enrollmentId"]" class="d-flex mb-4">
+        <input asp-for="SelectedDate" type="date" class="form-control me-2" />
+        <select asp-for="SelectedStatus" class="form-control me-2">
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+            <option value="Late">Late</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Mark</button>
+    </form>
+
+    <table class="table table-striped">
+        <thead><tr><th>Date</th><th>Status</th></tr></thead>
+        <tbody>
+            @foreach (var record in Model.Records)
+            {
+                <tr>
+                    <td>@record.Date.ToShortDateString()</td>
+                    <td>@record.Status</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

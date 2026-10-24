@@ -1,0 +1,16 @@
+﻿@page "{id:int}"
+@model StudentManagement.Web.Pages.Teacherss.DeleteModel
+
+@if (Model.ErrorMessage is not null)
+{
+    <div class="alert alert-danger">@Model.ErrorMessage</div>
+}
+<div class="container mt-4">
+    <h1>Delete Teacher</h1>
+    <p>Are you sure you want to delete <strong>@Model.Teacher.FullName</strong>?</p>
+    <form method="post">
+        <input type="hidden" asp-for="Teacher.Id" />
+        <button type="submit" class="btn btn-danger">Confirm Delete</button>
+        <a asp-page="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

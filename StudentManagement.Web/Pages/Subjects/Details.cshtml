@@ -1,0 +1,49 @@
+﻿@page "{id:int}"
+@model StudentManagement.Web.Pages.Subjects.DetailsModel
+@{
+    ViewData["Title"] = "Subject Grades & Sections";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Subject: @Model.Subject.Name</h2>
+        <a asp-page="Index" class="btn btn-secondary">Back to Subjects</a>
+    </div>
+
+    <h4 class="mb-3">Select Grade Level & Section</h4>
+    
+    <div class="row g-4">
+        @foreach (var grade in Model.AllGrades)
+        {
+            <div class="col-md-6 col-lg-6">
+                <div class="card shadow-sm h-100">
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">@grade</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted small mb-2">Select a Section to view Students & Teacher:</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            @foreach (var sec in Model.AllSections)
+                            {
+                                var key = $"{grade}-{sec}";
+                                var isAssigned = Model.AssignedClassKeys.Contains(key);
+
+                                <a asp-page="ClassView" 
+                                   asp-route-subjectId="@Model.Subject.Id"
+                                   asp-route-gradeLevel="@grade"
+                                   asp-route-section="@sec"
+                                   class="btn @(isAssigned ? "btn-success" : "btn-outline-primary") btn-sm">
+                                    Section @sec
+                                    @if (isAssigned)
+                                    {
+                                        <span class="badge bg-light text-dark ms-1">Assigned</span>
+                                    }
+                                </a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

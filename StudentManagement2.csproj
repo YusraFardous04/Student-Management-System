@@ -1,0 +1,482 @@
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{A26AA7FE-9C06-98BF-3C07-7618D8DC0B78}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>ConsoleApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>StudentManagement2</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".vs\ProjectEvaluation\studentmanagement.metadata.v10.bin" />
+    <None Include=".vs\ProjectEvaluation\studentmanagement.projects.v10.bin" />
+    <None Include=".vs\ProjectEvaluation\studentmanagement.strings.v10.bin" />
+    <None Include=".vs\slnx.sqlite" />
+    <None Include=".vs\StudentManagement.slnx\FileContentIndex\58b5447d-6713-43ee-8e23-e0f59775ce02.vsidx" />
+    <None Include=".vs\StudentManagement.slnx\FileContentIndex\c45f8d33-902d-4df9-a0d7-975b9ca9c37d.vsidx" />
+    <None Include=".vs\StudentManagement.slnx\FileContentIndex\fb7a49c7-f389-45c3-bcce-4e8fb9327465.vsidx" />
+    <None Include=".vs\StudentManagement.slnx\v18\.wsuo" />
+    <None Include=".vs\StudentManagement.slnx\v18\DocumentLayout.backup.json" />
+    <None Include=".vs\StudentManagement.slnx\v18\DocumentLayout.json" />
+    <None Include=".vs\StudentManagement\config\applicationhost.config" />
+    <None Include=".vs\StudentManagement\DesignTimeBuild\.dtbcache.v2" />
+    <None Include=".vs\StudentManagement\FileContentIndex\7d0fdc94-c10a-4c17-8c7c-0221c0f77614.vsidx" />
+    <None Include=".vs\StudentManagement\v18\.futdcache.v2" />
+    <None Include=".vs\StudentManagement\v18\.suo" />
+    <None Include=".vs\StudentManagement\v18\DocumentLayout.backup.json" />
+    <None Include=".vs\StudentManagement\v18\DocumentLayout.json" />
+    <None Include=".vs\VSWorkspaceState.json" />
+    <None Include="StudentManagement.Api\appsettings.Development.json" />
+    <None Include="StudentManagement.Api\appsettings.json" />
+    <None Include="StudentManagement.Api\bin\Debug\net9.0\appsettings.Development.json" />
+    <None Include="StudentManagement.Api\bin\Debug\net9.0\appsettings.json" />
+    <None Include="StudentManagement.Api\bin\Debug\net9.0\StudentManagement.Api.deps.json" />
+    <None Include="StudentManagement.Api\bin\Debug\net9.0\StudentManagement.Api.runtimeconfig.json" />
+    <None Include="StudentManagement.Api\bin\Debug\net9.0\StudentManagement.Api.staticwebassets.endpoints.json" />
+    <None Include="StudentManagement.Api\obj\Debug\net9.0\ApiEndpoints.json" />
+    <None Include="StudentManagement.Api\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json" />
+    <None Include="StudentManagement.Api\obj\Debug\net9.0\rjsmrazor.dswa.cache.json" />
+    <None Include="StudentManagement.Api\obj\Debug\net9.0\rpswa.dswa.cache.json" />
+    <None Include="StudentManagement.Api\obj\Debug\net9.0\staticwebassets.build.endpoints.json" />
+    <None Include="StudentManagement.Api\obj\Debug\net9.0\staticwebassets.build.json" />
+    <None Include="StudentManagement.Api\obj\Debug\net9.0\staticwebassets.build.json.cache" />
+    <None Include="StudentManagement.Api\obj\Debug\net9.0\StudentM.4FDA3EF4.Up2Date" />
+    <None Include="StudentManagement.Api\obj\Debug\net9.0\StudentManagement.Api.AssemblyInfoInputs.cache" />
+    <None Include="StudentManagement.Api\obj\Debug\net9.0\StudentManagement.Api.assets.cache" />
+    <None Include="StudentManagement.Api\obj\Debug\net9.0\StudentManagement.Api.csproj.AssemblyReference.cache" />
+    <None Include="StudentManagement.Api\obj\Debug\net9.0\StudentManagement.Api.csproj.BuildWithSkipAnalyzers" />
+    <None Include="StudentManagement.Api\obj\Debug\net9.0\StudentManagement.Api.csproj.CoreCompileInputs.cache" />
+    <None Include="StudentManagement.Api\obj\Debug\net9.0\StudentManagement.Api.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="StudentManagement.Api\obj\Debug\net9.0\StudentManagement.Api.genruntimeconfig.cache" />
+    <None Include="StudentManagement.Api\obj\Debug\net9.0\StudentManagement.Api.MvcApplicationPartsAssemblyInfo.cache" />
+    <None Include="StudentManagement.Api\obj\Debug\net9.0\swae.build.ex.cache" />
+    <None Include="StudentManagement.Api\obj\project.assets.json" />
+    <None Include="StudentManagement.Api\obj\project.nuget.cache" />
+    <None Include="StudentManagement.Api\obj\Release\net9.0\StudentManagement.Api.AssemblyInfoInputs.cache" />
+    <None Include="StudentManagement.Api\obj\Release\net9.0\StudentManagement.Api.assets.cache" />
+    <None Include="StudentManagement.Api\obj\Release\net9.0\StudentManagement.Api.csproj.AssemblyReference.cache" />
+    <None Include="StudentManagement.Api\obj\Release\net9.0\StudentManagement.Api.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="StudentManagement.Api\obj\StudentManagement.Api.csproj.nuget.dgspec.json" />
+    <None Include="StudentManagement.Api\obj\StudentManagement.Api.csproj.nuget.g.props" />
+    <None Include="StudentManagement.Api\obj\StudentManagement.Api.csproj.nuget.g.targets" />
+    <None Include="StudentManagement.Api\Properties\launchSettings.json" />
+    <None Include="StudentManagement.Api\StudentManagement.Api.csproj" />
+    <None Include="StudentManagement.Api\StudentManagement.Api.http" />
+    <None Include="StudentManagement.Web\appsettings.Development.json" />
+    <None Include="StudentManagement.Web\appsettings.json" />
+    <None Include="StudentManagement.Web\bin\Debug\net9.0\appsettings.Development.json" />
+    <None Include="StudentManagement.Web\bin\Debug\net9.0\appsettings.json" />
+    <None Include="StudentManagement.Web\bin\Debug\net9.0\StudentManagement.Web.deps.json" />
+    <None Include="StudentManagement.Web\bin\Debug\net9.0\StudentManagement.Web.runtimeconfig.json" />
+    <None Include="StudentManagement.Web\bin\Debug\net9.0\StudentManagement.Web.staticwebassets.endpoints.json" />
+    <None Include="StudentManagement.Web\bin\Debug\net9.0\StudentManagement.Web.staticwebassets.runtime.json" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\0trpxm5czl-ttgo8qnofa.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\0zaqk3wqow-pj5nd1wqec.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\1ax2muhx3l-ag7o75518u.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\21zenl9z0z-6pdc2jztkx.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\2i2ktt88j9-mrlpezrjn3.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\2rl8iuq969-j5mq2jizvt.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\2yh3kmxqr4-x0q3zqp4vz.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\30k6v9fbyz-83jwlth58m.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\3dme5mbfgx-erw9l3u2r3.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\3s2webe7az-37tfw0ft22.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\4ecxyl9cx2-mlv21k5csn.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\5gbysmez13-v0zj4ognzu.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\60na1q97et-notf2xhcfb.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\85uireg8o1-hrwsygsryq.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\8el22ebvqu-47otxtyo56.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\8hugwqklkl-61n19gt1b8.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\8zz4zoopqu-aexeepp0ev.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\96759axovf-6cfz1n2cew.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\96cdq3yk28-ee0r1s7dh0.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\99x7dqeahv-tdbxkamptv.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\9dham80u0n-h1s4sie4z3.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\9hdcjg6jzv-k8d9w2qqmf.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\9toc5umxid-356vix0kms.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\9vhp7ch0ds-x5rlgp3dxy.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\9x8um3j9ft-ub07r2b239.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\awu6pr720o-jj8uyg4cgr.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\bgztlgks8m-iovd86k7lj.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\cp4doc9cfn-cosvhxvwiu.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\cyqenewgkc-46ein0sx1k.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\ep69hbnm27-fsbi9cje9m.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\fyo7am3iq3-63fj8s7r0e.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\g7l7g36fb9-rzd6atqjts.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\gsz4ouk4wt-y7v9cxd14o.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\k8pknmi3tu-4v8eqarkd7.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\kcn5g35j9a-d7shbmvgxk.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\kwxf2m1zja-493y06b0oq.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\ljy4soz3p1-khv3u5hwcm.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\mlv51x3yw6-c2jlpeoesf.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\mqf3wd9cgb-vr1egmr9el.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\nci38t8je6-o1o13a6vjx.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\ngejo8yw9u-r4e9w2rdcm.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\nq6uy2aes9-ft3s53vfgj.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\ntrofm869v-b9sayid5wm.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\nuxvtjto62-dxx9fxp4il.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\p6yptg3d7f-87fc7y1x7t.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\qcelkp01c6-2z0ns9nrw6.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\r2roa8iomt-0i3buxo5is.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\rgxfovcuc3-kbrnm935zg.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\s76yd0co3e-nvvlpmu67g.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\sc6qwbyp2k-pk9g2wxc8p.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\svqsrl329i-s35ty4nyc5.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\t0zvig82hs-b7pk76d08c.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\t39hx22r3c-fvhpjtyr6v.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\td66genqsq-lzl9nlhx6b.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\tk8nqdcx3b-0j3bgjxly4.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\u59p9dzajc-x5rlgp3dxy.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\upojms76xt-ausgxo2sd3.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\v4da1xhihq-lcd1t2u6c8.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\wo78et0csb-muycvpuwrr.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\x6ftjy64au-c2oey78nd0.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\xyd25j1pdc-jd9uben2k1.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\ycwnx9ytup-bqjiyaj88i.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\yze7hcnzgs-xtxxf3hu2r.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\compressed\zw20lktnsg-06098lyss8.gz" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\rbcswa.dswa.cache.json" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\rjimswa.dswa.cache.json" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\rjsmrazor.dswa.cache.json" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\rpswa.dswa.cache.json" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\staticwebassets.build.endpoints.json" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\staticwebassets.build.json" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\staticwebassets.build.json.cache" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\staticwebassets.development.json" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\StudentM.E19A5A39.Up2Date" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\StudentManagement.Web.AssemblyInfoInputs.cache" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\StudentManagement.Web.assets.cache" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\StudentManagement.Web.csproj.AssemblyReference.cache" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\StudentManagement.Web.csproj.CoreCompileInputs.cache" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\StudentManagement.Web.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\StudentManagement.Web.genruntimeconfig.cache" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\StudentManagement.Web.MvcApplicationPartsAssemblyInfo.cache" />
+    <None Include="StudentManagement.Web\obj\Debug\net9.0\StudentManagement.Web.RazorAssemblyInfo.cache" />
+    <None Include="StudentManagement.Web\obj\project.assets.json" />
+    <None Include="StudentManagement.Web\obj\project.nuget.cache" />
+    <None Include="StudentManagement.Web\obj\Release\net9.0\StudentManagement.Web.AssemblyInfoInputs.cache" />
+    <None Include="StudentManagement.Web\obj\Release\net9.0\StudentManagement.Web.assets.cache" />
+    <None Include="StudentManagement.Web\obj\Release\net9.0\StudentManagement.Web.csproj.AssemblyReference.cache" />
+    <None Include="StudentManagement.Web\obj\Release\net9.0\StudentManagement.Web.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="StudentManagement.Web\obj\Release\net9.0\StudentManagement.Web.RazorAssemblyInfo.cache" />
+    <None Include="StudentManagement.Web\obj\StudentManagement.Web.csproj.nuget.dgspec.json" />
+    <None Include="StudentManagement.Web\obj\StudentManagement.Web.csproj.nuget.g.props" />
+    <None Include="StudentManagement.Web\obj\StudentManagement.Web.csproj.nuget.g.targets" />
+    <None Include="StudentManagement.Web\Pages\Error.cshtml" />
+    <None Include="StudentManagement.Web\Pages\Privacy.cshtml" />
+    <None Include="StudentManagement.Web\Pages\Shared\_Layout.cshtml" />
+    <None Include="StudentManagement.Web\Pages\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="StudentManagement.Web\Pages\Students\Index.cshtml" />
+    <None Include="StudentManagement.Web\Pages\Students\no.cshtml" />
+    <None Include="StudentManagement.Web\Pages\_ViewImports.cshtml" />
+    <None Include="StudentManagement.Web\Pages\_ViewStart.cshtml" />
+    <None Include="StudentManagement.Web\Properties\launchSettings.json" />
+    <None Include="StudentManagement.Web\StudentManagement.Web.csproj" />
+    <None Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <None Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <None Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map" />
+    <None Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map" />
+    <None Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <None Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <None Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map" />
+    <None Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <None Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map" />
+    <None Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map" />
+    <None Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map" />
+    <None Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <None Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map" />
+    <None Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map" />
+    <None Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <None Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <None Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map" />
+    <None Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map" />
+    <None Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+    <None Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+    <None Include="StudentManagement.Web\wwwroot\lib\bootstrap\LICENSE" />
+    <None Include="StudentManagement.Web\wwwroot\lib\jquery-validation\LICENSE.md" />
+    <None Include="StudentManagement.Web\wwwroot\lib\jquery\dist\jquery.min.map" />
+    <None Include="StudentManagement.Web\wwwroot\lib\jquery\dist\jquery.slim.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="StudentManagement.Api\Controllers\StudentsController.cs" />
+    <Compile Include="StudentManagement.Api\Data\DbContext.cs" />
+    <Compile Include="StudentManagement.Api\Data\StudentDbContext.cs" />
+    <Compile Include="StudentManagement.Api\Migrations\20260923120922_InitialCreate.cs" />
+    <Compile Include="StudentManagement.Api\Migrations\20260923120922_InitialCreate.Designer.cs">
+      <DependentUpon>20260923120922_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentManagement.Api\Migrations\StudentDbContextModelSnapshot.cs" />
+    <Compile Include="StudentManagement.Api\models\Student.cs" />
+    <Compile Include="StudentManagement.Api\obj\Debug\net9.0\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" />
+    <Compile Include="StudentManagement.Api\obj\Debug\net9.0\StudentManagement.Api.AssemblyInfo.cs" />
+    <Compile Include="StudentManagement.Api\obj\Debug\net9.0\StudentManagement.Api.GlobalUsings.g.cs" />
+    <Compile Include="StudentManagement.Api\obj\Debug\net9.0\StudentManagement.Api.MvcApplicationPartsAssemblyInfo.cs" />
+    <Compile Include="StudentManagement.Api\obj\Release\net9.0\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" />
+    <Compile Include="StudentManagement.Api\obj\Release\net9.0\StudentManagement.Api.AssemblyInfo.cs" />
+    <Compile Include="StudentManagement.Api\obj\Release\net9.0\StudentManagement.Api.GlobalUsings.g.cs" />
+    <Compile Include="StudentManagement.Api\Program.cs" />
+    <Compile Include="StudentManagement.Api\Services\IStudentServices.cs" />
+    <Compile Include="StudentManagement.Api\Services\StudentServices.cs" />
+    <Compile Include="StudentManagement.Web\models\Student.cs" />
+    <Compile Include="StudentManagement.Web\obj\Debug\net9.0\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" />
+    <Compile Include="StudentManagement.Web\obj\Debug\net9.0\StudentManagement.Web.AssemblyInfo.cs" />
+    <Compile Include="StudentManagement.Web\obj\Debug\net9.0\StudentManagement.Web.GlobalUsings.g.cs" />
+    <Compile Include="StudentManagement.Web\obj\Debug\net9.0\StudentManagement.Web.MvcApplicationPartsAssemblyInfo.cs" />
+    <Compile Include="StudentManagement.Web\obj\Debug\net9.0\StudentManagement.Web.RazorAssemblyInfo.cs" />
+    <Compile Include="StudentManagement.Web\obj\Release\net9.0\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" />
+    <Compile Include="StudentManagement.Web\obj\Release\net9.0\StudentManagement.Web.AssemblyInfo.cs" />
+    <Compile Include="StudentManagement.Web\obj\Release\net9.0\StudentManagement.Web.GlobalUsings.g.cs" />
+    <Compile Include="StudentManagement.Web\obj\Release\net9.0\StudentManagement.Web.RazorAssemblyInfo.cs" />
+    <Compile Include="StudentManagement.Web\Pages\Error.cshtml.cs" />
+    <Compile Include="StudentManagement.Web\Pages\Privacy.cshtml.cs" />
+    <Compile Include="StudentManagement.Web\Pages\Students\Index.cshtml.cs" />
+    <Compile Include="StudentManagement.Web\Program.cs" />
+    <Compile Include="StudentManagement.Web\Services\StudentApiClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Azure.Core.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Azure.Identity.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Humanizer.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.Build.Locator.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.Identity.Client.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.OpenApi.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\Mono.TextTemplating.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\StudentManagement.Api.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\StudentManagement.Api.exe" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\StudentManagement.Api.pdb" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\System.ClientModel.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\System.CodeDom.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\System.Composition.AttributedModel.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\System.Composition.Convention.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\System.Composition.Hosting.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\System.Composition.Runtime.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\System.Composition.TypedParts.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\System.Drawing.Common.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\System.Memory.Data.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\System.Runtime.Caching.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\System.Security.Permissions.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\System.Windows.Extensions.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="StudentManagement.Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="StudentManagement.Api\obj\Debug\net9.0\apphost.exe" />
+    <Content Include="StudentManagement.Api\obj\Debug\net9.0\refint\StudentManagement.Api.dll" />
+    <Content Include="StudentManagement.Api\obj\Debug\net9.0\ref\StudentManagement.Api.dll" />
+    <Content Include="StudentManagement.Api\obj\Debug\net9.0\staticwebassets.references.upToDateCheck.txt" />
+    <Content Include="StudentManagement.Api\obj\Debug\net9.0\staticwebassets.removed.txt" />
+    <Content Include="StudentManagement.Api\obj\Debug\net9.0\StudentManagement.Api.csproj.FileListAbsolute.txt" />
+    <Content Include="StudentManagement.Api\obj\Debug\net9.0\StudentManagement.Api.dll" />
+    <Content Include="StudentManagement.Api\obj\Debug\net9.0\StudentManagement.Api.pdb" />
+    <Content Include="StudentManagement.Api\StudentManagement.Api.csproj.user" />
+    <Content Include="StudentManagement.Web\bin\Debug\net9.0\Microsoft.OpenApi.dll" />
+    <Content Include="StudentManagement.Web\bin\Debug\net9.0\StudentManagement.Web.dll" />
+    <Content Include="StudentManagement.Web\bin\Debug\net9.0\StudentManagement.Web.exe" />
+    <Content Include="StudentManagement.Web\bin\Debug\net9.0\StudentManagement.Web.pdb" />
+    <Content Include="StudentManagement.Web\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll" />
+    <Content Include="StudentManagement.Web\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll" />
+    <Content Include="StudentManagement.Web\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll" />
+    <Content Include="StudentManagement.Web\obj\Debug\net9.0\apphost.exe" />
+    <Content Include="StudentManagement.Web\obj\Debug\net9.0\refint\StudentManagement.Web.dll" />
+    <Content Include="StudentManagement.Web\obj\Debug\net9.0\ref\StudentManagement.Web.dll" />
+    <Content Include="StudentManagement.Web\obj\Debug\net9.0\scopedcss\bundle\StudentManagement.Web.styles.css" />
+    <Content Include="StudentManagement.Web\obj\Debug\net9.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css" />
+    <Content Include="StudentManagement.Web\obj\Debug\net9.0\scopedcss\projectbundle\StudentManagement.Web.bundle.scp.css" />
+    <Content Include="StudentManagement.Web\obj\Debug\net9.0\staticwebassets.references.upToDateCheck.txt" />
+    <Content Include="StudentManagement.Web\obj\Debug\net9.0\staticwebassets.removed.txt" />
+    <Content Include="StudentManagement.Web\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt" />
+    <Content Include="StudentManagement.Web\obj\Debug\net9.0\StudentManagement.Web.csproj.FileListAbsolute.txt" />
+    <Content Include="StudentManagement.Web\obj\Debug\net9.0\StudentManagement.Web.dll" />
+    <Content Include="StudentManagement.Web\obj\Debug\net9.0\StudentManagement.Web.pdb" />
+    <Content Include="StudentManagement.Web\Pages\Shared\_Layout.cshtml.css" />
+    <Content Include="StudentManagement.Web\StudentManagement.Web.csproj.user" />
+    <Content Include="StudentManagement.Web\wwwroot\css\site.css" />
+    <Content Include="StudentManagement.Web\wwwroot\favicon.ico" />
+    <Content Include="StudentManagement.Web\wwwroot\js\site.js" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\jquery\dist\jquery.js" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\jquery\dist\jquery.min.js" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\jquery\dist\jquery.slim.js" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\jquery\dist\jquery.slim.min.js" />
+    <Content Include="StudentManagement.Web\wwwroot\lib\jquery\LICENSE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".vs\StudentManagement2.slnx\v18\" />
+    <Folder Include="StudentManagement.Api\bin\Release\net9.0\" />
+    <Folder Include="StudentManagement.Api\obj\Debug\net9.0\staticwebassets\" />
+    <Folder Include="StudentManagement.Api\obj\Release\net9.0\refint\" />
+    <Folder Include="StudentManagement.Api\obj\Release\net9.0\ref\" />
+    <Folder Include="StudentManagement.Web\bin\Release\net9.0\" />
+    <Folder Include="StudentManagement.Web\obj\Debug\net9.0\staticwebassets\" />
+    <Folder Include="StudentManagement.Web\obj\Release\net9.0\refint\" />
+    <Folder Include="StudentManagement.Web\obj\Release\net9.0\ref\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>

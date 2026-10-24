@@ -1,0 +1,193 @@
+﻿@page "/kpi"
+@model StudentManagement.Web.Pages.IndexModel
+
+@{
+    ViewData["Title"] = "KPI Dashboard";
+
+    // Overall summary metrics
+    var totalStudents = Model.KpiData.Count;
+    var overallAvgMarks = totalStudents > 0 ? Math.Round(Model.KpiData.Average(s => s.Marks), 1) : 0;
+    var overallAvgAttendance = totalStudents > 0 ? Math.Round(Model.KpiData.Average(s => s.AttendanceRate), 1) : 0;
+
+    // Group data by Grade & Section (e.g., "9th Grade - A") for the dual-line graph, ordered by grade number
+    var sectionGrouped = Model.KpiData
+        .GroupBy(s => $"{s.GradeLevel} - {s.Section}")
+        .Select(g => new
+        {
+            ClassLabel = g.Key,
+            AvgMarks = Math.Round(g.Average(s => s.Marks), 1),
+            AvgAttendance = Math.Round(g.Average(s => s.AttendanceRate), 1)
+        })
+        .OrderBy(g => int.TryParse(new string(g.ClassLabel.TakeWhile(char.IsDigit).ToArray()), out var n) ? n : 99)
+        .ThenBy(g => g.ClassLabel)
+        .ToList();
+}
+
+<div class="container-fluid px-4 py-3">
+    <!-- Compact Header & Filter Bar -->
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 pb-2 border-bottom">
+        <h4 class="m-0 font-weight-bold text-dark">Overall School Performance KPI</h4>
+
+        <!-- Inline Small Filters -->
+        <form method="get" class="d-flex align-items-center gap-2 flex-wrap">
+            <div>
+                <select asp-for="Grade" class="form-select form-select-sm shadow-none">
+                    <option value="">All Grades</option>
+                    @for (int i = 1; i <= 12; i++)
+                    {
+                        var suffix = (i % 100 is >= 11 and <= 13) ? "th" : (i % 10) switch { 1 => "st", 2 => "nd", 3 => "rd", _ => "th" };
+                        var gradeName = $"{i}{suffix} Grade";
+                        <option value="@gradeName">@gradeName</option>
+                    }
+                </select>
+            </div>
+            <div>
+                <select asp-for="Section" class="form-select form-select-sm shadow-none">
+                    <option value="">All Sections</option>
+                    <option value="A">Section A</option>
+                    <option value="B">Section B</option>
+                    <option value="C">Section C</option>
+                    <option value="D">Section D</option>
+                </select>
+            </div>
+            <div>
+                <select asp-for="Subject" class="form-select form-select-sm shadow-none">
+                    <option value="">All Subjects</option>
+                    <option value="Math">Math</option>
+                    <option value="Science">Science</option>
+                    <option value="English">English</option>
+                    <option value="Art">Art</option>
+                    <option value="Biology">Biology</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Physics">Physics</option>
+                    <option value="PE">PE</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-sm btn-primary px-3">Filter</button>
+            <a asp-page="/KPI" class="btn btn-sm btn-outline-secondary">Reset</a>
+        </form>
+    </div>
+
+    <!-- Summary KPI Stat Cards -->
+    <div class="row g-3 mb-4">
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 border-start border-primary border-4 p-3 bg-white">
+                <div class="text-muted small font-weight-bold">OVERALL MARKS AVERAGE</div>
+                <div class="h2 font-weight-bold text-primary m-0">@overallAvgMarks%</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 border-start border-success border-4 p-3 bg-white">
+                <div class="text-muted small font-weight-bold">OVERALL ATTENDANCE RATE</div>
+                <div class="h2 font-weight-bold text-success m-0">@overallAvgAttendance%</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 border-start border-info border-4 p-3 bg-white">
+                <div class="text-muted small font-weight-bold">TOTAL STUDENTS EVALUATED</div>
+                <div class="h2 font-weight-bold text-info m-0">@totalStudents</div>
+            </div>
+        </div>
+    </div>
+
+    @if (totalStudents == 0)
+    {
+        <div class="alert alert-warning">No graded students match these filters.</div>
+    }
+
+    <!-- Dual-Line KPI Chart Container -->
+    <div class="card shadow border-0 rounded-3 p-4">
+        <div style="position: relative; height: 500px; width: 100%;">
+            <canvas id="kpiChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const classLabels = @Html.Raw(Json.Serialize(sectionGrouped.Select(g => g.ClassLabel)));
+    const avgMarksData = @Html.Raw(Json.Serialize(sectionGrouped.Select(g => g.AvgMarks)));
+    const avgAttendanceData = @Html.Raw(Json.Serialize(sectionGrouped.Select(g => g.AvgAttendance)));
+
+    const ctx = document.getElementById('kpiChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: classLabels,
+            datasets: [
+                {
+                    label: 'Average Marks (%)',
+                    data: avgMarksData,
+                    borderColor: '#0d6efd',
+                    backgroundColor: 'rgba(13, 110, 253, 0.08)',
+                    borderWidth: 3,
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    yAxisID: 'yMarks',
+                    tension: 0.25,
+                    fill: true
+                },
+                {
+                    label: 'Attendance Rate (%)',
+                    data: avgAttendanceData,
+                    borderColor: '#198754',
+                    backgroundColor: 'transparent',
+                    borderWidth: 3,
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    yAxisID: 'yAttendance',
+                    tension: 0.25
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        font: { size: 14, weight: 'bold' },
+                        usePointStyle: true
+                    }
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false
+                }
+            },
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Grade & Section',
+                        font: { size: 14, weight: 'bold' }
+                    }
+                },
+                yMarks: {
+                    type: 'linear',
+                    position: 'left',
+                    title: {
+                        display: true,
+                        text: 'Average Marks (%)',
+                        font: { size: 14, weight: 'bold' }
+                    },
+                    min: 0,
+                    max: 100
+                },
+                yAttendance: {
+                    type: 'linear',
+                    position: 'right',
+                    title: {
+                        display: true,
+                        text: 'Attendance Rate (%)',
+                        font: { size: 14, weight: 'bold' }
+                    },
+                    min: 0,
+                    max: 100,
+                    grid: { drawOnChartArea: false }
+                }
+            }
+        }
+    });
+</script>

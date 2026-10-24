@@ -1,0 +1,50 @@
+﻿@page 
+@model StudentManagement.Web.Pages.Students.EditModel
+
+<div class="container mt-4">
+    <h1>Edit Student</h1>
+    <form method="post">
+        <input type="hidden" asp-for="Student.Id" />
+        <div class="mb-3">
+            <label class="form-label">Full Name</label>
+            <input asp-for="Student.FullName" class="form-control" />
+            <span asp-validation-for="Student.FullName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input asp-for="Student.Email" class="form-control" />
+            <span asp-validation-for="Student.Email" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Phone</label>
+            <input asp-for="Student.PhoneNumber" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Date of Birth</label>
+            <input asp-for="Student.DateOfBirth" type="date" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Student.GradeLevel" class="form-label">Grade Level</label>
+            <select asp-for="Student.GradeLevel"
+                    asp-items="Model.GradeOptions"
+                    class="form-select">
+                <option value="">-- Select Grade Level --</option>
+            </select>
+
+            <a asp-page="/Students/Enrollment" asp-route-id="@Model.Student!.Id" class="btn btn-primary mt-3">
+                View / Manage Enrollment
+            </a>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Section</label>
+            <select asp-for="Student.Section" class="form-control">
+                <option value="">-- Select Section --</option>
+                <option value="A">Section A</option>
+                <option value="B">Section B</option>
+                <option value="C">Section C</option>
+                <option value="D">Section D</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
